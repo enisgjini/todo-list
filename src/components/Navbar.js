@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="navbar-menu">
         <a href="#" className="navbar-link">
           <input id="toggler" type="checkbox" />
-          <label for="toggler">
+          <label htmlFor="toggler">
             <img src={user.picture} alt={user.name} className="navbar-avatar" />
           </label>
           <div className="navbar-avatar-dropdown">

@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./components/Form";
 import { useAuth0 } from "@auth0/auth0-react";
 import Navbar from "./components/Navbar";
+import Task from "./components/Task";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -15,6 +16,7 @@ function App() {
     return (
       <div>
         <Navbar />
+        <Task/>
       </div>
     );
   } else {

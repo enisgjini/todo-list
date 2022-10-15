@@ -163,13 +163,13 @@
 }
 
 /* Input */
-input {
+#toggler {
   opacity: 0;
   pointer-events: none;
   touch-action: none;
 }
 
-input:checked ~ .navbar-avatar-dropdown {
+#toggler:checked ~ .navbar-avatar-dropdown {
   display: flex;
 }
 
@@ -260,4 +260,217 @@ input:checked ~ .navbar-avatar-dropdown {
 .buttons-of-form i {
   align-items: center;
   justify-items: center;
+}
+
+/* Task.js design */
+
+.box-task {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 850px;
+  height: 350px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0px 374px 150px rgba(0, 0, 0, 0.01),
+    0px 210px 126px rgba(0, 0, 0, 0.05), 0px 94px 94px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.box-task p {
+  padding-left: 5%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.box-task-input-task-name {
+  width: 774px;
+  height: 50px;
+  margin: 0 auto;
+  opacity: 100;
+  border: 1px solid #cccccc;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  font-family: "Poppins";
+  padding-left: 2%;
+}
+.box-task-input-task-name:focus {
+  outline: none;
+}
+.box-task-input-description {
+  width: 774px;
+  height: 100px;
+  margin: 0 auto;
+  opacity: 100;
+  border: 1px solid #cccccc;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  font-family: "Poppins";
+  resize: none;
+  padding-left: 2%;
+  padding-top: 2%;
+}
+.box-task-input-description:focus {
+  outline: none;
+}
+
+ul {
+  margin: 0 auto;
+}
+.minibox-task {
+  width: 850px;
+  height: max-content;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0px 23px 51px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 15px;
+}
+
+.minibox-task-name {
+  padding-left: 5%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.minibox-task-description {
+  padding-left: 5%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.time{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+.minibox-task-date {
+  width: max-content;
+  height: max-content;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  margin-left: 5%;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+.minibox-task-reminder {
+  width: max-content;
+  height: max-content;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  margin-left: 5%;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+.buttons-of-submit-task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.due-date {
+  width: 25%;
+  margin-left: 4%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.reminder {
+  width: 100%;
+  margin-left: 10px;
+}
+.submit {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  margin-right: 3%;
+}
+
+/* Unique design for input date */
+input[type="date"] {
+  display: block;
+  position: relative;
+  padding: 1rem 3.5rem 1rem 0.75rem;
+
+  font-size: 1rem;
+  font-family: monospace;
+
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background: url("./assets/calendar.png") right 1rem center no-repeat;
+  background-size: 20%;
+  cursor: pointer;
+}
+/* input[type="date"]:focus {
+  outline: none;
+  border-color: #3acfff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+} */
+
+::-webkit-datetime-edit {
+}
+::-webkit-datetime-edit-fields-wrapper {
+}
+::-webkit-datetime-edit-month-field:hover,
+::-webkit-datetime-edit-day-field:hover,
+::-webkit-datetime-edit-year-field:hover {
+  background: rgba(0, 120, 250, 0.1);
+}
+::-webkit-datetime-edit-text {
+  opacity: 0;
+}
+::-webkit-clear-button,
+::-webkit-inner-spin-button {
+  display: none;
+}
+::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 2.5rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  cursor: pointer;
+
+  color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+input[type="date"]:hover::-webkit-calendar-picker-indicator:hover {
+  opacity: 0;
+}
+
+input[type="time"] {
+  display: block;
+  position: relative;
+  padding: 1rem 3.5rem 1rem 0.75rem;
+
+  font-size: 1rem;
+  font-family: monospace;
+
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background: url("./assets/alarm-clock.png") right 1rem center no-repeat;
+  background-size: 20%;
+  cursor: pointer;
 }
