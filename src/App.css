@@ -1,0 +1,263 @@
+/* Google Font CDN - Poppins Regular 400 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* Box of form */
+.form {
+  height: 650px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0px 374px 150px rgba(0, 0, 0, 0.01),
+    0px 210px 126px rgba(0, 0, 0, 0.05), 0px 94px 94px rgba(0, 0, 0, 0.09),
+    0px 23px 51px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  width: 800px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+/* Form logo */
+.form-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+/* Form Title */
+.form-heading {
+  color: #000000;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  margin-top: 50px;
+}
+/* Form Subtitle */
+.form-subtitle {
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 50px;
+}
+/* Row using flex*/
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 50px;
+}
+/* Column using flex*/
+
+.column {
+  flex: 50%;
+}
+
+/* Log In and Sign Up button CSS design */
+.form-button {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.form-button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-button:hover {
+  background-color: #2c974b;
+}
+
+.form-button:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.form-button:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.form-button:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+/* I need to give them some id because the gap between buttons was 0*/
+/* Forms buttons design using ID # */
+#log-in {
+  float: right;
+  margin-right: 24px;
+}
+#sign-up {
+  float: left;
+  margin-left: 24px;
+}
+
+/* ------------------------- Navbar.js CSS Design | Start here ------------------------- */
+/* A navigation bar is a section of a graphical user interface intended to aid visitors in accessing information. */
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  text-align: right;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+  width: 77.85px;
+  height: 75px;
+}
+
+/* Mavbar Menu */
+.navbar-menu {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Navbar Link */
+.navbar-link {
+  display: inline-block;
+  padding: 15px 0;
+  margin: 15px 25px;
+  position: relative;
+  text-decoration: none;
+  color: #0f0f0f;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+/* Input */
+input {
+  opacity: 0;
+  pointer-events: none;
+  touch-action: none;
+}
+
+input:checked ~ .navbar-avatar-dropdown {
+  display: flex;
+}
+
+/* Navbar Avatar */
+.navbar-avatar {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+/* Navbar Avatar Dropdown */
+.navbar-avatar-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% - 10%);
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 25px 15px 25px 15px;
+  gap: 5px;
+  right: 0;
+  width: max-content;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 187, 187);
+}
+.navbar-avatar-dropdown span {
+  font-size: 18px;
+}
+
+/* CSS */
+.buttons-of-form {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgb(27 31 35 / 10%) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.buttons-of-form:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.buttons-of-form:hover {
+  background-color: #2c974b;
+}
+
+.buttons-of-form:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.buttons-of-form:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.buttons-of-form:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.buttons-of-form i {
+  align-items: center;
+  justify-items: center;
+}
