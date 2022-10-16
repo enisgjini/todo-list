@@ -1,5 +1,9 @@
+/* eslint-disable eqeqeq */
 import React, { Component } from "react";
 import "../App.css";
+import reminder from "../assets/bell.png";
+import check from "../assets/check.png";
+
 
 export default class Task extends Component {
   constructor() {
@@ -8,8 +12,11 @@ export default class Task extends Component {
       todoList: [],
       currentTime: "",
       alarmTime: "", // default empty array
+      play: false,
     };
     this.setAlarmTime = this.setAlarmTime.bind(this);
+    this.url = "https://www.youtube.com/watch?v=214pJH6qg8U";
+    this.audio = new Audio(this.url);
   }
   componentDidMount() {
     this.clock = setInterval(() => this.setCurrentTime(), 1000);
@@ -26,6 +33,7 @@ export default class Task extends Component {
       currentTime: new Date().toLocaleTimeString("en-US", { hour12: false }),
     });
   }
+  play() {}
 
   setAlarmTime(event) {
     event.preventDefault();
@@ -41,7 +49,12 @@ export default class Task extends Component {
     } else {
       this.alarmMessage = "Your alarm is set for " + this.state.alarmTime + ".";
       if (this.state.currentTime === this.state.alarmTime) {
-        alert("its time!");
+        this.setState({
+          play: true,
+          pause: false,
+        });
+        console.log(this.audio);
+        this.audio.play();
       } else {
         console.log("not yet");
       }
@@ -67,8 +80,17 @@ export default class Task extends Component {
     });
   };
 
+  deleteTodo = (event) => {
+    // splice(indexNumber, howmanyTodelete)
+    this.state.todoList.splice(event.target.value, 1);
+    this.setState({
+      todoList: this.state.todoList,
+    });
+  };
+
+  doneTodo = (event) => {};
+
   render() {
-    console.log(this.state.todoList);
     return (
       <>
         <form onSubmit={this.addTodo}>
@@ -90,7 +112,12 @@ export default class Task extends Component {
             ></textarea>
             <div className="buttons-of-submit-task">
               <div className="due-date">
-                <input type="date" placeholder="mm/dd/yyyy" name="date" />
+                <input
+                  type="date"
+                  placeholder="mm/dd/yyyy"
+                  name="date"
+                  required
+                />
               </div>
               <div className="reminder">
                 {/* <h2>It is {this.state.currentTime}.</h2>
@@ -99,35 +126,44 @@ export default class Task extends Component {
                   type="time"
                   name="reminder"
                   onChange={this.setAlarmTime}
+                  required
                 />
               </div>
               <div className="submit">
                 <button type="submit" className="buttons-of-form">
-                  Add+
+                  Add
                 </button>
               </div>
             </div>
           </div>
-
-          <ul>
-            {this.state.todoList.map((task, index) => {
-              return (
-                <div className="minibox-task">
-                  <h3 className="minibox-task-name">{task.taskName}</h3>
-                  <p className="minibox-task-description">{task.description}</p>
-                  <div className="time">
-                    <div key={index} className="minibox-task-date">
-                      {task.date}
-                    </div>
-                    <div key={index} className="minibox-task-reminder">
-                      {task.reminder}
-                    </div>
+        </form>
+        <ul>
+          {this.state.todoList.map((task, index) => {
+            return (
+              <div className="minibox-task">
+                <h3 className="minibox-task-name">{task.taskName}</h3>
+                <p className="minibox-task-description">{task.description}</p>
+                
+                <div className="time">
+                  <div className="minibox-task-date">{task.date}</div>
+                  <div className="minibox-task-reminder">
+                    <img src={reminder} alt="" />
+                    {task.reminder}
+                  </div>
+                  <div className="minibox-task-donetask">
+                    <button
+                      onClick={this.deleteTodo}
+                      value={index}
+                      className="buttons-of-form"
+                    >
+                     <img src={check} alt="" />
+                    </button>
                   </div>
                 </div>
-              );
-            })}
-          </ul>
-        </form>
+              </div>
+            );
+          })}
+        </ul>
       </>
     );
   }

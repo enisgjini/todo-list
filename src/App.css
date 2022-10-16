@@ -1,6 +1,10 @@
 /* Google Font CDN - Poppins Regular 400 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 /* Box of form */
 .form {
   height: 650px;
@@ -350,7 +354,7 @@ ul {
   font-weight: 400;
   line-height: 24px;
 }
-.time{
+.time {
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -370,9 +374,33 @@ ul {
   height: max-content;
   border: 1px solid #cccccc;
   border-radius: 10px;
-  margin-left: 5%;
+  margin-left: 3%;
   padding: 1%;
   margin-bottom: 1%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+.minibox-task-reminder img {
+  width: 20px;
+  height: 20px;
+  padding-right: 4%;
+}
+.minibox-task-donetask {
+  width: max-content;
+  height: max-content;
+  
+  margin-left: 3%;
+  padding: 1%;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: flex-end;
+}
+.minibox-task-donetask>.buttons-of-form>img {
+  width: 20px;
+  height: 20px;
+  padding-right: 4%;
 }
 .buttons-of-submit-task {
   display: flex;
@@ -397,7 +425,7 @@ ul {
 .submit {
   width: 50%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 3%;
 }
 
@@ -406,15 +434,14 @@ input[type="date"] {
   display: block;
   position: relative;
   padding: 1rem 3.5rem 1rem 0.75rem;
-
+  outline: none;
   font-size: 1rem;
-  font-family: monospace;
-
   border: 1px solid #cccccc;
   border-radius: 10px;
   background: url("./assets/calendar.png") right 1rem center no-repeat;
   background-size: 20%;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 /* input[type="date"]:focus {
   outline: none;
@@ -464,13 +491,12 @@ input[type="time"] {
   display: block;
   position: relative;
   padding: 1rem 3.5rem 1rem 0.75rem;
-
   font-size: 1rem;
-  font-family: monospace;
-
+  outline: none;
   border: 1px solid #cccccc;
   border-radius: 10px;
   background: url("./assets/alarm-clock.png") right 1rem center no-repeat;
   background-size: 20%;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
